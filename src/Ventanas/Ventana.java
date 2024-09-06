@@ -148,11 +148,23 @@ public class Ventana extends JFrame implements ActionListener {
 	        txtCorreo.setText("");
 	        JOptionPane.showMessageDialog(null, "Registro Exitoso");
 	    } else if (e.getSource() == btnBuscar) {
-	    	
-	    	
-	    		String criterio = JOptionPane.showInputDialog("Buscar por (nombre/correo):");
-	            String valor = JOptionPane.showInputDialog("Ingrese el "+ criterio + " del contacto que desea encontrar:");
-	            String resultado = miCoordinador.getModelo().consultarContacto(criterio, valor);
+	    		String valor="";
+	    		String resultado="";
+	    		int criterio =Integer.parseInt(JOptionPane.showInputDialog("¿Como desea realizar su busquedad? \n\n"
+	    				+ "1. Nombre \n"
+	    				+ "2. Correo \n\n"
+	    				+ "Respuesta:\n"));
+	    		if(criterio == 1) {
+	    			String nombre = "nombre";
+	    			 valor = JOptionPane.showInputDialog("Ingrese el "+ nombre + " del contacto que desea encontrar:");
+	    			 resultado = miCoordinador.getModelo().consultarContacto(nombre, valor);
+	    		}else if( criterio == 2) {
+	    			String correo = "correo";
+	    			 valor = JOptionPane.showInputDialog("Ingrese el "+ correo + " del contacto que desea encontrar:");
+	    			 resultado = miCoordinador.getModelo().consultarContacto(correo, valor);
+	    		}
+	            
+	            
 	            textArea.setText(resultado);
             
 	    	

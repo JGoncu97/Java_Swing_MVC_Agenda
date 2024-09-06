@@ -60,31 +60,34 @@ public class ModeloDeDatos extends PersonaU{
 	 	}
 	
 		public String consultarContacto(String criterio, String valor) {
-			 List<String> contactos = new ArrayList<>();
-			    for (PersonaU persona : miAgenda.values()) {
-			        
-			    	boolean coincidencia= false;
-			    	if("nombre".equalsIgnoreCase(criterio)) {
-			    		
-			    		coincidencia= persona.getNombre().contains(valor);
-			    	}else if("correo".equalsIgnoreCase(criterio)) {
-			    		
-			    		coincidencia = persona.getCorreo().contains(valor);
-			    	}if(coincidencia) {
-			    		contactos.add(persona.toString());
-			    	}
-			    	
-			    	
-			    }
-			    if (contactos.isEmpty()) {
-			        return "No se encontraron contactos que coincidan con el criterio.";
-			    } else {
-			    	 // Unir todas las cadenas con una nueva línea
-			        return String.join("\n", contactos);
-			    }
-			   
-			
+			List<String> contactos = new ArrayList<>();
+		    for (PersonaU persona : miAgenda.values()) {
+		        
+		    	boolean coincidencia= false;
+		    	if("nombre".equalsIgnoreCase(criterio)) {
+		    		
+		    		coincidencia= persona.getNombre().contains(valor);
+		    	}else if("correo".equalsIgnoreCase(criterio)) {
+		    		
+		    		coincidencia = persona.getCorreo().contains(valor);
+		    	}if(coincidencia) {
+		    		contactos.add(persona.toString());
+		    	}
+		    	
+		    	
+		    }
+		    if (contactos.isEmpty()) {
+		        return "No se encontraron contactos que coincidan con el criterio.";
+		    } else {
+		    	 // Unir todas las cadenas con una nueva línea
+		        return String.join("\n", contactos);
+		    }
+		   
 		}
+			    	
+			    
+			  
+		
 	
 		public void borrarContacto(int id) {
 			
