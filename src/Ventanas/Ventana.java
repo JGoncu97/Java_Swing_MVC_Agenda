@@ -149,14 +149,12 @@ public class Ventana extends JFrame implements ActionListener {
 	        JOptionPane.showMessageDialog(null, "Registro Exitoso");
 	    } else if (e.getSource() == btnBuscar) {
 	    	
-	    	if (miCoordinador != null && miCoordinador.getModelo() != null) {
+	    	
 	    		String criterio = JOptionPane.showInputDialog("Buscar por (nombre/correo):");
-	            String valor = JOptionPane.showInputDialog("Ingrese el valor de búsqueda:");
+	            String valor = JOptionPane.showInputDialog("Ingrese el "+ criterio + " del contacto que desea encontrar:");
 	            String resultado = miCoordinador.getModelo().consultarContacto(criterio, valor);
 	            textArea.setText(resultado);
-            } else {
-                JOptionPane.showMessageDialog(this, "Modelo de datos no inicializado.");
-            }
+            
 	    	
 	    } else if (e.getSource() == btnEliminar) {
 	    	 String borrarId = JOptionPane.showInputDialog("¿Cuál es el ID que desea eliminar?");
