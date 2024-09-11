@@ -14,12 +14,12 @@ public class PersonaU {
 	
 
 	public PersonaU() {
-		this.id = ModeloDeDatos.getNextId();
+		this.id=ModeloDeDatos.getNextId();
 	}
 	
 	public PersonaU(int id ,String nombre, String apellido, String numTlfno, String correo, String direccion) {
 		super();
-		this.id=ModeloDeDatos.getNextId();;
+		this.id=ModeloDeDatos.getNextId();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.numTlfno = numTlfno;
