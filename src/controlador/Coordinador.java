@@ -16,12 +16,22 @@ public class Coordinador {
 	   
 	    
 	    public Coordinador() {
-	    	
+	    	//Inicializacion de MiModelo en Coordinador para que todas las clases manejen el mismo Modelo
 	    	miModelo = new ModeloDeDatos();
 	    	
 	    	
 	    }
-
+	    
+	    //Coordinador con Ventana Principal
+	    public void setVentanaP(VentanaPrincipal miPpal) {
+	        this.miPpal = miPpal;
+	    }
+	    //Coordinador con Ventana resultado
+	    public void setVentanaR(VentanaResultado miResultado) {
+	        this.miResultado = miResultado;
+	    }
+	    
+	    
 	    public void setVentana(VentanaRegistro miVentana) {
 	        this.miVentana = miVentana;
 	    }
@@ -38,20 +48,14 @@ public class Coordinador {
 	        return miVentana;
 	    }
 
-	    public void setVentanaP(VentanaPrincipal miPpal) {
-	        this.miPpal = miPpal;
-	    }
+	    
 
-	    public void setVentanaR(VentanaResultado miResultado) {
-	        this.miResultado = miResultado;
-	    }
-
-		
-		
 		public List<String> consultarPersona(String criterio, String valor) {
-			// Aquí deberías recibir una lista de contactos en lugar de un único String
+			// Recibimos la lista de contactos 
 		    List<String> contactosEncontrados = miModelo.consultarContacto(criterio, valor);
-		    return contactosEncontrados; // Devuelves la lista de contactos
+		    //Mandamos la lista de contactos
+		    return contactosEncontrados; 
+
 		}
 	    
 	

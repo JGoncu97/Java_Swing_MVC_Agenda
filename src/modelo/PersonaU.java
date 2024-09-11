@@ -78,12 +78,12 @@ public class PersonaU {
 	@Override
 	public String toString() {
 		return "Contacto :\n"
-				+ "Id="+ id +" \n"
-				+ "Nombre=" + nombre + " \n"
-				+ "Apellido=" + apellido + " \n"
-				+ "Celular=" + numTlfno + " \n"
-				+ "Correo=" + correo+" \n"
-				+ "Direccion=" + direccion + " \n";
+				+ "Id: "+ id +" \n"
+				+ "Nombre: " + nombre + " \n"
+				+ "Apellido: " + apellido + " \n"
+				+ "Celular: " + numTlfno + " \n"
+				+ "Correo: " + correo+" \n"
+				+ "Direccion: " + direccion + " \n";
 	}
 	
 }

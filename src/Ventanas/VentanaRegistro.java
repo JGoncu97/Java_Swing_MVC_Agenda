@@ -110,27 +110,31 @@ public class VentanaRegistro extends JFrame implements ActionListener {
 		
 	}
 	private void registrar() {
-	        
-	        // Utilizar el método del modelo para registrar el contacto
-	        miCoordinador.getModelo().registrarContacto(
-	            txtNombre.getText(),
-	            txtApellido.getText(),
-	            txtDireccion.getText(),
-	            txtNumTlfno.getText(),
-	            txtCorreo.getText()
-	        );
+		 PersonaU usuario = new PersonaU();
+
+        
+	         usuario.setNombre(txtNombre.getText());
+	         usuario.setApellido(txtApellido.getText());
+	         usuario.setDireccion(txtDireccion.getText());
+	         usuario.setNumTlfno(txtNumTlfno.getText());
+	         usuario.setCorreo(txtCorreo.getText());
+	        // Utiliza el método del modelo para registrar el contacto
+	        miCoordinador.getModelo().registrarContacto(usuario);
+	            
+	       
 	   
 	}
+	
+	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnAgregar) {
+			//Escuchardor para el registro
 	        registrar();
-	        txtNombre.setText("");
-	        txtApellido.setText("");
-	        txtNumTlfno.setText("");
-	        txtDireccion.setText("");
-	        txtCorreo.setText("");
+	        //Limpiar los input despues de Registrar
+	        limpiar();
+	        //Aviso de accion del registro
 	        JOptionPane.showMessageDialog(null, "Registro Exitoso");
 	    }else if(e.getSource()== btnCancelar) {
 	    	
@@ -138,6 +142,15 @@ public class VentanaRegistro extends JFrame implements ActionListener {
 	    	
 	    }
 		
+	}
+	
+	private void limpiar() {
+		
+			txtNombre.setText("");
+	        txtApellido.setText("");
+	        txtNumTlfno.setText("");
+	        txtDireccion.setText("");
+	        txtCorreo.setText("");
 	}
 
 	
